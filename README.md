@@ -6,7 +6,7 @@
 **/app/models** 과 **/app/controllers** 는 ruby 코드를 이용하여 작성 되었으며
 **/app/views** 는 html, css를 이용하여 작성 되었습니다.
 
-![2](https://user-images.githubusercontent.com/31886913/48898879-58115680-ee91-11e8-977f-4cfbfae9903d.png)
+![25percent](https://user-images.githubusercontent.com/31886913/48901145-d2dd7000-ee97-11e8-9a62-884df98f42d1.png)
 
 
 ## 웹서비스 제작목적
