@@ -1,0 +1,320 @@
+  <%= render "post1/navbar" %>
+
+    <!-- BEGIN INTRO SECTION -->
+    <section id="intro">
+        <div id="carousel-example-generic" data-slide-to="1" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner text-uppercase" role="listbox">
+                <!-- First slide -->
+                <div class="item carousel-item-one active" data-target="#carousel-example-generic" data-slide-to="1">
+                    <div class="container">
+                        <h3 class="carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                            25 Percent
+                        </h3>
+                        <p class="carousel-position-two animate-delay carousel-subtitle-v1" data-animation="animated fadeInDown">
+                           Draw What you want to Draw <br> 그리고 싶은 것만 그리자! 
+                        </p>
+                        <a href="/percent/story" class="carousel-position-three animate-delay btn-brd-white" data-animation="animated fadeInUp">More about 25%</a>
+                    </div>
+                </div>
+               
+                <!-- 순서 바꿈 2/3 -->
+                <!-- Third slide -->
+                <div class="item carousel-item-three" data-target="#carousel-example-generic" data-slide-to="2">
+                    <div class="center-block">
+                        <div class="center-block-wrap">
+                            <div class="center-block-body">
+                                <h3 class="margin-bottom-20 animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                                    낙서를 그리다!
+                                </h3>
+                                <p class="margin-bottom-20 animate-delay carousel-title-v3" data-animation="animated fadeInDown">
+                                    그림을 그리다!
+                                </p>
+                                <a href="/percent/story" class="animate-delay btn-brd-white" data-animation="animated fadeInUp">More about 25%</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Second slide -->
+                <div class="item carousel-item-two" data-target="#carousel-example-generic" data-slide-to="0">
+                    <div class="container">
+                        <h3 class="carousel-position-one animate-delay carousel-title-v2" data-animation="animated fadeInDown">
+                            당신의 하루에 <br> 그림이 가득하기를
+                        </h3>
+                        <p class="carousel-position-three animate-delay carousel-subtitle-v2" data-animation="animated fadeInDown">
+                            Available in: Android &amp; IOS
+                        </p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    <!-- END INTRO SECTION -->
+
+    <!-- BEGIN MAIN LAYOUT -->
+    <div class="page-content">
+        <!-- SUBSCRIBE BEGIN -->
+        <div class="subscribe">
+            <div class="container">
+                <div class="subscribe-wrap">
+                    <div class="subscribe-body subscribe-desc md-margin-bottom-30">
+                        <h1>#그림 검색</h1>
+                        <p>지금 그리고 싶은 것을 검색해보세요</p>
+                    </div>
+                    <div class="subscribe-body">
+                        <form action="/video_board1/search"class="form-wrap input-field" method="post">
+                            <div class="form-wrap-group">
+                                <input name="search_title" type="text" class="form-control" id="name" placeholder="#라이언 #따뜻함 #골목길 #풍경">
+                            </div>
+                            <!-- <div class="form-wrap-group border-left-transparent">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            </div> -->
+                            <div class="form-wrap-group">
+                                <button type="submit" class="btn-danger btn-md btn-block">검색</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SUBSCRIBE END -->
+        
+        <!-- BEGIN ABOUT SECTION -->
+        <section id="about">
+        
+            <!-- Services BEGIN -->
+            <div class="container service-bg">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="services sm-margin-bottom-100">
+                            <div class="services-wrap">
+                                <div class="service-body">
+                                    <img src="/assets/icon1.png" alt="">
+                                </div>
+                            </div>
+                            <h2>그림 학습의 구성</h2>
+                            <p>그림 학습은 25%는 가르침과<br>75%의 반복으로 이루어집니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="services sm-margin-bottom-100">
+                            <div class="services-wrap">
+                                <div class="service-body">
+                                    <img src="/assets/icon2.png" alt="">
+                                </div>
+                            </div>
+                            <h2>25%의 가르침</h2>
+                            <p>우리는 25%를 채워줄 그림 강좌를 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="services">
+                            <div class="services-wrap">
+                                <div class="service-body">
+                                    <img src="/assets/icon3.png" alt="">
+                                </div>
+                            </div>
+                            <h2>75%의 반복</h2>
+                            <p>우리는 나머지 75%를 다른 사람들과 공유하며<br> 배울 수 있도록 커뮤니티를 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Services END -->
+        </section>
+        <!-- END ABOUT SECTION -->
+
+        <div class="header">
+
+        </div>
+        <!-- BEGIN FEATURES SECTION -->
+        <section id="features">
+            <!-- Features BEGIN -->
+            <div class="features-bg">
+                <div class="container">
+                    <div class="heading">
+                        <h2>많은 사람들이 <strong>찾은 수업</strong> </h2>
+                        <p>많은 사람들이  <strong>그리고 싶어하는 그림 </strong></p>
+                    </div><!-- //end heading -->
+
+                    <!-- Features -->
+                    <div class="row margin-bottom-70">
+                        <div class="col-md-6 md-margin-bottom-70">
+                            <div class="features">
+                                <iframe width="400" height="320" src="https://www.youtube.com/embed/CpoijzcfsjE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                                
+                                <!-- <img src="assets/onepage2/img/widgets/screen1.png" alt=""> -->
+                                <div class="features-in">
+                                    <h3><a href="#">라이언 그리기</a></h3>
+                                    <p>라이언 노래 그리기 By. PPmong피피몽</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="features">
+                                <iframe width="400" height="320" src="https://www.youtube.com/embed/HNQdMkdVnJs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <!-- <img src="assets/onepage2/img/widgets/screen1.png" alt=""> -->
+                                <div class="features-in">
+                                    <h3><a text-align=center href="#">미니언즈 그리기</a></h3>
+                                    <p>바나나로 미니언즈 그리기 By. PPmong피피몽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- //end row -->
+        
+                        <div class="row margin-bottom-70">
+                                <div class="col-md-6 md-margin-bottom-70">
+                                    <div class="features">
+                                            <iframe width="400" height="320" src="https://www.youtube.com/embed/Z2PpPn4CAg4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <div class="features-in">
+                                            <h3><a href="#">골목길 그리기</a></h3>
+                                            <p>골목길 그림 그리기 By. 데일리 드로잉</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="features">
+                                            <iframe width="400" height="320" src="https://www.youtube.com/embed/Dw6s5934BEQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <div class="features-in">
+                                            <h3><a href="#">카페 그리기</a></h3>
+                                            <p>서울 어느 카페 By. 데일리 드로잉</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- //end row -->
+                    <!-- <div class="row margin-bottom-80">
+                        <div class="col-md-6 md-margin-bottom-70">
+                            <div class="features">
+                                <img src="assets/onepage2/img/widgets/screen1.png" alt="">
+                                <div class="features-in">
+                                    <h3><a href="#">Awesome design</a></h3>
+                                    <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="features">
+                                <img src="assets/onepage2/img/widgets/screen1.png" alt="">
+                                <div class="features-in">
+                                    <h3><a href="#">Awesome design</a></h3>
+                                    <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div><!-- //end row -->
+                    <!-- End Features -->
+
+                    <center><a href="/video_board1/index" class="btn-brd-danger">더 많은 수업 보기</a></center>
+                </div>
+            </div>
+            <!-- Features END -->
+        </section>
+        <!-- END FEATURES SECTION -->
+        <div class="modi">
+
+        </div>
+        
+        <!-- BEGIN PRICING SECTION -->
+        <section id="pricing">
+            <div class="pricing-bg">
+                <div class="container">
+                    <div class="heading">
+                        <h2>25% <strong>커뮤니티</strong></h2>
+                        <P>서로의 이야기를 공유할 수 있도록 <br>서로의 그림을 공유할 수 있도록</P>
+                    </div><!-- //end heading -->
+
+                    <!-- Pricing -->
+                    <div class="row no-space-row">
+                        <div class="col-md-4">
+                            <div class="pricing no-right-brd">
+                                <img src="/assets/icon4.png" alt="">
+                                <h4>기타 이야기</h4>
+                                <span>그림이 아니더라도</span>
+                                <ul class="pricing-features">
+                                    <li>게시판 1</li>
+                                    <li>게시판 2</li>
+                                    <li>게시판 3</li>
+                                    <li>게시판 4</li>
+                                </ul>
+                                <button type="button" class="btn-brd-primary">둘러보기</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pricing pricing-red">
+                                <img src="/assets/icon5.png" alt="">
+                                <h4>그림 이야기</h4>
+                                <span>서로의 그림을 통해</span>
+                                <ul class="pricing-features">
+                                    <li>게시판 1</li>
+                                    <li>게시판 2</li>
+                                    <li>게시판 3</li>
+                                    <li>게시판 4</li>
+                                </ul>
+                                <button type="button" class="btn-brd-white">둘러보기</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pricing no-left-brd">
+                                <img src="/assets/icon6.png" alt="">
+                                <h4>이야기 3</h4>
+                                <span>간략한 소개</span>
+                                <ul class="pricing-features">
+                                    <li>게시판 1</li>
+                                    <li>게시판 2</li>
+                                    <li>게시판 3</li>
+                                    <li>게시판 4</li>
+                                </ul>
+                                <button type="button" class="btn-brd-primary">둘러보기</button>
+                            </div>
+                        </div>
+                    </div><!-- //end row -->
+                    <!-- End Pricing -->
+                </div>
+            </div>
+        </section>
+        <!-- END PRICING SECTION -->
+
+        <!-- BEGIN CONTACT SECTION -->
+        <footer class="">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="list-inline">
+                        <li>
+                            <i class="fa fa-facebook"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-twitter"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-dribbble"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-pinterest"></i>
+                        </li>
+                    </ul>
+                    <hr>
+                    <p>Designed with love by KeenThemes</a>  2014</p>
+                    <h3 class="carousel slide carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                            25 Percent
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- END CONTACT SECTION -->
+    </div>
+    <!-- END MAIN LAYOUT -->
+    <a href="#intro" class="go2top"><i class="fa fa-arrow-up"></i></a>
+    
+</body>

@@ -1,0 +1,76 @@
+<%= render "post1/navbar" %>
+<div class="sign-center">
+  <div class="sign-blank"> </div>
+
+    <div class="modi_center">
+      <h2 id="sign_h2">로그인</h2><br>
+    
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <!--<%= f.label :email %>-->
+          <a id="sign_field_text">이메일</a>
+          <br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      <br>
+        <div class="field">
+          <a id="sign_field_text">비밀번호</a>
+          <!--<%= f.label :password %>-->
+          <br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+      <br>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <a id="sign_field_text">ID 기억하기</a>
+            <!--<%= f.label :remember_me %>-->
+          </div>
+        <% end -%>
+      <br>
+        <div class="actions">
+           <a id="sign_field_text2"><%= f.submit "로그인" %></a>
+        </div>
+      <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
+</div>
+
+<footer class="">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="list-inline">
+                        <li>
+                            <i class="fa fa-facebook"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-twitter"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-dribbble"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-pinterest"></i>
+                        </li>
+                    </ul>
+                    <hr>
+                    <p>Designed with love by KeenThemes</a>  2014</p>
+                    <h3 class="carousel slide carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                            25 Percent
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+      #sign_field_text2>input{
+        background-color:#acd1e4;
+        border-color:#acd1e4;
+        border-radius:10%;
+      }
+      
+    </style>

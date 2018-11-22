@@ -1,0 +1,3 @@
+class PicturePost < ApplicationRecord
+
+end

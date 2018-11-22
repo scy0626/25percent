@@ -1,0 +1,84 @@
+<%= render "percent/common" %>
+<br><br><br><br>
+<div class="container">
+  <%= render "post1/navbar" %>
+  
+    <form action = "/qnapost/create" method="post" >
+      <div class="form-group">
+        <label for="exampleFormControlInput1">문의종류</label>
+        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex)그림관련, 서비스 이용장애, 콘텐츠관련, 정보오류">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">세부사항</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10"  placeholder="자세한 설명을 입력하세요 "></textarea>
+      </div>
+      <div style="text-align:right">
+        <a href="/qnapost/index">목록</a>
+        <button class="bbtn_save" type="submit" ><font size="4em">저장</font></button>
+      </div>
+ 
+    
+    </form>
+    
+
+</div>
+</div>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.bbtn_save {
+  background-color: #acd1e4;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bbtn_save:before,
+.bbtn_save:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.bbtn_save:before {
+  border-color: #acd1e4;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.bbtn_save:after {
+  border-bottom-width: 2px;
+  border-color: #acd1e4;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.bbtn_save:hover,
+.bbtn_save.hover {
+  background-color: #acd1e4;
+}
+.bbtn_save:hover:before,
+.bbtn_save.hover:before,
+.bbtn_save:hover:after,
+.bbtn_save.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</style>

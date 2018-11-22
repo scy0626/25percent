@@ -1,0 +1,91 @@
+
+<%= render "post1/navbar" %>
+<div class="sign-center">
+  <div class="sign-blank"> </div>
+    <div class ="modi_center">
+      <h2 id="sign_h2">회원가입</h2>
+      <br>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+      
+        <div class="field" >
+          <!--<%= f.label :username %>-->
+          <a id="sign_field_text"> 유저 네임을 입력하세요</a>
+          <br />
+          <%= f.text_field :username, autofocus: true %>
+        </div>
+        <br>
+        
+        <div class="field">
+          <!--<%= f.label :email %>-->
+          <a id="sign_field_text"> 이메일을 입력하세요</a>
+          <br />
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
+        <br>
+      
+        <div class="field">
+          <!--<%= f.label :password %>-->
+          <a id="sign_field_text"> 비밀번호를 입력하세요<br>
+          <% if @minimum_password_length %>
+          (<%= @minimum_password_length %> 글자 이상 입력하세요)</a>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <br>
+      
+        <div class="field">
+          <!--<%= f.label :password_confirmation %>-->
+          <a id="sign_field_text"> 비밀번호를 재입력하세요</a>
+          <br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <br>
+        <div class="actions">
+          <a id="sign_field_text2"><%= f.submit "완료" %></a>
+        </div>
+      <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
+   
+</div>
+
+<footer class="">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="list-inline">
+                        <li>
+                            <i class="fa fa-facebook"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-twitter"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-dribbble"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-pinterest"></i>
+                        </li>
+                    </ul>
+                    <hr>
+                    <p>Designed with love by KeenThemes</a>  2014</p>
+                    <h3 class="carousel slide carousel-position-one animate-delay carousel-title-v1" data-animation="animated fadeInDown">
+                            25 Percent
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+      #sign_field_text2>input{
+        background-color:#acd1e4;
+        border-color:#acd1e4;
+        border-radius:10%;
+      }
+      
+    </style>

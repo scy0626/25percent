@@ -1,0 +1,25 @@
+<%= render "percent/common" %>
+<br><br><br><br>
+<div class="container">
+  <%= render "post1/navbar" %>
+    <form action = "/qnapost/update/<%=@post.id%>" method="post" >
+      <div class="form-group">
+        <label for="exampleFormControlInput1">문의종류</label>
+        <input name="title" type="text" value="<%=@post.title%>" class="form-control" id="exampleFormControlInput1" placeholder="ex)그림관련, 서비스 이용장애, 콘텐츠관련, 정보오류">
+    
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">세부사항</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10"  placeholder="자세한 설명을 입력하세요 "><%=@post.content%></textarea>
+       
+      </div>
+    
+        <button type="submit">저장</button>
+       <a href="/qnapost/index">목록</a>
+ 
+    
+    </form>
+
+</div>
+</div>

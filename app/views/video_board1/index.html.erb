@@ -1,0 +1,163 @@
+<%= render "post1/navbar" %>
+<%= render "percent/common3"%>
+
+<div class="modi_video_index_title">
+    동영상목록
+</div>
+<div class="container">
+        <% @video.each do |p| %>
+            <div class="modi_display">
+                <div class="modi_card">
+                  <div class="modi_container">
+                    <iframe class="modi_rad modi_video"src="<%= p.video %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <a class="modi_p"href="/video_board1/show/<%= p.id %>"><%= p.title %></a>
+                  </div>
+              </div>
+            </div>
+        <% end %>
+<hr />
+    <div>
+      <form action="/video_board1/search" method="post">
+        <div class="input-group">
+          <div class="SearchArea">
+            <input name="search_title" type="text" class="form-control col-3" id="exampleFormControlInput1" style="width: 150px; height: 20px; border:2px solid #ebe4d5">
+            <button type="submit" class="search_1" style="position: relative;">검색</button>
+          </div>
+          <a href="/video_board1/new"><button class="modi_button">글쓰기</button></a>
+        </div>
+      </form>
+    </div>
+    
+    <!--이 버튼은 데이터를 전송하는 게 아니니까 type을 그냥 button으로 두면 됨.-->
+    <!--default가 get방식이니까 해당 html을 받아올 것-->
+</div>
+
+<%= render "video_board1/list" %>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.modi_button {
+  background-color: #ffcfcb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.modi_button:before,
+.modi_button:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.modi_button:before {
+  border-color: #ffcfcb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.modi_button:after {
+  border-bottom-width: 2px;
+  border-color: #ffcfcb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.modi_button:hover,
+.modi_button.hover {
+  background-color: #ffcfcb;
+}
+.modi_button:hover:before,
+.modi_button.hover:before,
+.modi_button:hover:after,
+.modi_button.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</style>
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.search_1 {
+  background-color: #d5f0eb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.search_1:before,
+.search_1:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.search_1:before {
+  border-color: #d5f0eb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.search_1:after {
+  border-bottom-width: 2px;
+  border-color: #d5f0eb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.search_1:hover,
+.search_1.hover {
+  background-color: #d5f0eb;
+}
+.search_1:hover:before,
+.search_1.hover:before,
+.search_1:hover:after,
+.search_1.hover:after {
+  height: 100%;
+  width: 100%;
+}
+.input-group{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+}
+.SearchArea{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+</style>

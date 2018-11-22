@@ -1,0 +1,87 @@
+<%= render "percent/common3" %>
+<br><br><br><br>
+<div class="container">
+  <%= render "post1/navbar" %>
+    <h1><%=@post.title%></h1>
+    <p>추천수 : <%=@post.like%></p>
+    <hr/>
+    <div style="text-align:right;">
+        <!--to_s:문자열로 변환,+기준으로 나눠서,첫번째-->
+        <div><%=@post.created_at.to_s.split("+").first%>, <%=time_ago_in_words(@post.created_at)%> ago</div>
+       
+        <a href="/picture/edit/<%=@post.id%>">수정</a>
+        <a href="/picture/destroy/<%=@post.id%>">삭제</a>
+     
+    </div>
+   
+    <% unless @post.image.nil? %>
+        <%= image_tag @post.image %>
+    <%end%>
+     <h4>By.<%=@post.content%></h4>
+     <div style="text-align:right">
+     <form action = "/picture/like/<%=@post.id%>">
+      <button class="btn_reconmend1" type="submit" >추천</button></a>
+    </form>
+    </div>
+    <hr>
+    <a href="/picture/index">목록</a><br>
+    
+
+
+</div>
+
+<style>
+.bg-animate-color {
+  animation: random-bg .5s linear infinite;
+}
+
+@keyframes random-bg {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.btn_reconmend1 {
+  background-color: #d5f0eb !important;
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  transition: all .3s ease;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn_reconmend1:hover {
+  animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+}
+
+.start-fun {
+  background-color: #fff !important;
+  color: salmon !important;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+</style>

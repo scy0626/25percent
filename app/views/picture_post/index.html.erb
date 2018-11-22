@@ -1,0 +1,152 @@
+<%= render "post1/navbar" %>
+<%= render "percent/common3" %>
+	<!-- BEGIN MAIN LAYOUT -->
+	<!-- Header BEGIN -->
+<%= render "video_board1/list" %>
+<br><br><Br><br>
+
+<div class="container">
+ <html>
+       <head>
+           <style type="text/css">
+               thead {color:cornflowerblue;}
+           </style>
+        </head>
+   </html>
+ <br>
+
+     
+  <% @post.each_with_index do |p,index| %>
+        <!--href에 /post/show로 하면 어떤 글을 읽어 올지 id를 알 수 없다.-->
+        <!--URL에 id를 보내니까 routes를 설정해줘야 한다.-->
+        <!--주소창으로 id값을 보내는 것 보다 form 태그를 통해서 전달하고 hidden으로 숨기는게 보안에 더 좋다.-->
+        <div class="modi_display">
+            <div class="modi_chang">
+              <div class="modi_container">
+                <img class="modi_rad modi_video imageArea" src="<% unless p.image.nil? %><%=p.image %><%end%>" frameborder="0" allow="autoplay; encrypted-media"allowfullscreen></img>
+                <a class="modi_p"href="/picture/show/<%= p.id %>"><%=index + 1 %>.<%=p.title%></a>
+                <p>조회수 <%=p.counter%>  &nbsp;  By.<%=p.content%></p>
+              </div>
+        </div>
+        </div>
+    <% end %>
+    <div style="text-align:right">
+    <a href="/picture/new"><button class="modi_button">글쓰기</button></a></div>    
+</div>
+</div>
+ 
+<style>
+.imageArea > img{
+    width :380px;
+    height :200px;
+}
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.btn_vw {
+  background-color: #ffcfcb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.btn_vw:before,
+.btn_vw:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.btn_vw:before {
+  border-color: #ffcfcb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.btn_vw:after {
+  border-bottom-width: 2px;
+  border-color: #ffcfcb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.btn_vw:hover,
+.btn_vw.hover {
+  background-color: #ffcfcb;
+}
+.btn_vw:hover:before,
+.btn_vw.hover:before,
+.btn_vw:hover:after,
+.btn_vw.hover:after {
+  height: 100%;
+  width: 100%;
+}
+.modi_button {
+  background-color: #ffcfcb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.modi_button:before,
+.modi_button:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.modi_button:before {
+  border-color: #ffcfcb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.modi_button:after {
+  border-bottom-width: 2px;
+  border-color: #ffcfcb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.modi_button:hover,
+.modi_button.hover {
+  background-color: #ffcfcb;
+}
+.modi_button:hover:before,
+.modi_button.hover:before,
+.modi_button:hover:after,
+.modi_button.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</style>

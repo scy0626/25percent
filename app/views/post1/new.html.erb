@@ -1,0 +1,90 @@
+<%= render "post1/navbar" %>
+<%= render "percent/common" %>
+	<!-- BEGIN MAIN LAYOUT -->
+	<!-- Header BEGIN -->
+
+<br><br><br><br>
+<div class="container">
+  <%= render "post1/navbar" %>
+    <form action = "/post1/create" method="post" enctype="multipart/form-data" >
+      <div class="form-group">
+        <label for="exampleFormControlInput1">제목</label>
+        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력하세요">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">내용</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10"  placeholder="내용을 입력하세요"></textarea>
+      </div>
+      
+         <input name="image" type="file" >
+         
+      <div style="text-align:right">
+        <a href="/post1/index">목록</a>
+        <button class="btn_save" type="submit" ><font size="4em">저장</font></button>
+      </div>
+ 
+    
+    </form>
+    
+
+</div>
+</div>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.btn_save {
+  background-color: #acd1e4;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.btn_save:before,
+.btn_save:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.btn_save:before {
+  border-color: #acd1e4;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.btn_save:after {
+  border-bottom-width: 2px;
+  border-color: #acd1e4;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.btn_save:hover,
+.btn_save.hover {
+  background-color: #acd1e4;
+}
+.btn_save:hover:before,
+.btn_save.hover:before,
+.btn_save:hover:after,
+.btn_save.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</style>

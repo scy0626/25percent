@@ -1,0 +1,123 @@
+<%= render "percent/common" %>
+<br><br><br><br>
+<div class="container">
+  <%= render "post1/navbar" %>
+    <h1><%=@post.title%></h1>
+   
+    <hr/>
+    <div style="text-align:right;">
+        <!--to_s:문자열로 변환,+기준으로 나눠서,첫번째-->
+        <div><%=@post.created_at.to_s.split("+").first%>, <%=time_ago_in_words(@post.created_at)%> ago</div>
+        <div><%=@post.user.username%></div>
+        <a href="/qnapost/edit/<%=@post.id%>">수정</a>
+        <a href="/qnapost/destroy/<%=@post.id%>">삭제</a>
+     
+    </div>
+    <p><%= simple_format(@post.content)%></p>
+   
+    
+    <div style="text-align:right">
+    <a href="/qnapost/index"><font size="4em">목록</font></a></div><br>
+   
+    
+    <% @post.qna_replies.each do |r| %>
+        <%=r.user.username%> : <%=r.content%>
+        <a href="/qna_reply/destroy/<%=r.id%>">삭제</a>
+        <br>
+    <%end%>
+    
+    
+    <form action="/qna_reply/create" method="post">
+      <div class="input-group">
+        <input name="post_id" value="<%=@post.id%>" hidden="true">
+        <textarea name="content" class="form-control col-11" id="exampleFormControlTextarea1" rows="3"  style="border:2px solid #ebe4d5" placeholder="댓글작성"></textarea>
+        <span class="input-group-btn">
+        <button type="submit" class="btn btn-dark">댓글 작성</button>
+        </span>
+      </div>
+        
+    </form> 
+    
+    <div>
+        <table class="table table-borderless" margin-left="auto">
+          <tbody>
+            <tr>
+              <td>이전글</td></td>
+              <% if @predecessor == -1 %>
+                  <td>이전 글이 없습니다.</td>
+              <% else %>
+                  <td><a href="/post1/show/<%= @predecessor_post_id %>"><%= @predecessor_post_title %></a></td>
+              <% end %>
+            </tr>
+            <tr>
+              <td>다음글</td>
+              <% if @successor == -1 %>
+              
+                  <td>다음 글이 없습니다.</td>
+              <% else %>
+                  <td><a href="/post1/show/<%= @successor_post_id %>"><%= @successor_post_title %></a></td>
+              <% end %>
+            </tr>
+            
+          </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+<style>
+.bg-animate-color {
+  animation: random-bg .5s linear infinite;
+}
+
+@keyframes random-bg {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.btn_reconmend {
+  background-color: #d5f0eb !important;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  transition: all .3s ease;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn_reconmend:hover {
+  animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+}
+
+.start-fun {
+  background-color: #fff !important;
+  color: salmon !important;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+</style>

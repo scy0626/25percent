@@ -1,0 +1,190 @@
+<%= render "post1/navbar" %>
+<%= render "percent/common" %>
+	<!-- BEGIN MAIN LAYOUT -->
+	<!-- Header BEGIN -->
+
+<br><br><Br><br>
+
+<div class="container">
+
+
+
+   <html>
+       <head>
+           <style type="text/css">
+               thead {color:cornflowerblue;}
+           </style>
+        </head>
+   </html>
+    <%= render "post1/list" %>
+    
+    <table class="table table-striped table-bordered table-hover" style="border-radius: 5em;">
+        
+      <thead>
+        <tr>
+           
+          <th scope="col">#</th>
+          <th scope="col">제목</th>
+          <th scope="col">글쓴이</th>
+          <th scope="col">등록일</th>
+          <th scope="col">조회수</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @post.each do |p| %>
+         <tr>
+             <% @count = @count - 1  %>
+          <th scope="row"><%= @count + 1 %></th>
+          <td><a href="/post1/show/<%=p.id%>"><%=p.title%>[<%=p.post1_reply1s.length%>]</a></td>
+          <td><%= p.user.username %></td>
+          <td><%=p.created_at.to_s.split("+").first%></td>
+          <td><%=p.counter%></td>
+         </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <div>
+      <form action="/post1/search" method="post">
+        <div class="input-group">
+            <div class="SearchArea">
+                <input name="search_title" type="text" class="form-control col-3" id="exampleFormControlInput1" style="width: 150px; height: 20px; border:2px solid #ebe4d5">
+                <button type="submit" class="search_1" style="position: relative;">검색</button>
+            </div>
+            <a href="/post1/new"><button class="modi_button">글쓰기</button></a>
+        </div>
+      </form>
+    </div>
+    
+    <div style="text-align:right">
+</div>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.modi_button {
+  background-color: #ffcfcb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.modi_button:before,
+.modi_button:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.modi_button:before {
+  border-color: #ffcfcb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.modi_button:after {
+  border-bottom-width: 2px;
+  border-color: #ffcfcb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.modi_button:hover,
+.modi_button.hover {
+  background-color: #ffcfcb;
+}
+.modi_button:hover:before,
+.modi_button.hover:before,
+.modi_button:hover:after,
+.modi_button.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</style>
+
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.search_1 {
+  background-color: #d5f0eb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin: 15px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.search_1:before,
+.search_1:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.search_1:before {
+  border-color: #d5f0eb;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.search_1:after {
+  border-bottom-width: 2px;
+  border-color: #d5f0eb;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.search_1:hover,
+.search_1.hover {
+  background-color: #d5f0eb;
+}
+.search_1:hover:before,
+.search_1.hover:before,
+.search_1:hover:after,
+.search_1.hover:after {
+  height: 100%;
+  width: 100%;
+}
+.input-group{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+}
+.SearchArea{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+</style>
